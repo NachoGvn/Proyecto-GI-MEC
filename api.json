@@ -1,0 +1,75 @@
+[
+    {
+         "id": 1,
+         "nombre": "Pieza torneada n1",
+         "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+         "precio": 3500,
+         "cantidad" : 0,
+         "url": "imagenes/pieza 2.jpg"
+    
+    },
+    {
+         "id": 2,
+         "nombre": "Pieza torneada n2",
+         "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        "precio": 3100,
+         "cantidad" : 0,
+         "url": "imagenes/pieza 1.jpg"
+    
+    },
+    {
+        "id": 3,
+         "nombre": "Pieza torneada n3",
+         "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+         "precio": 3200,
+         "cantidad" : 0,
+         "url": "imagenes/pieza 2.jpg"
+    
+    },
+    {
+         "id": 4,
+         "nombre": "Pieza torneada n4",
+         "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+         "precio": 3000,
+         "cantidad" : 0,
+         "url": "imagenes/pieza 1.jpg"
+    
+    },
+    {
+        "id": 5,
+        "nombre": "Pieza torneada n5",
+        "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        "precio": 3000,
+        "cantidad" : 0,
+        "url": "imagenes/pieza 2.jpg"
+   
+   },
+   {
+    "id": 6,
+    "nombre": "Pieza torneada n6",
+    "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    "precio": 3000,
+    "cantidad" : 0,
+    "url": "imagenes/pieza 1.jpg"
+
+},
+{
+    "id": 7,
+    "nombre": "Pieza torneada n7",
+    "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    "precio": 3000,
+    "cantidad" : 0,
+    "url": "imagenes/pieza 1.jpg"
+
+},
+{
+    "id": 8,
+    "nombre": "Pieza torneada n8",
+    "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    "precio": 3000,
+    "cantidad" : 0,
+    "url": "imagenes/pieza 2.jpg"
+
+}
+    
+    ]
