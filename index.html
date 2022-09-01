@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mainn.css">
+    <link rel="icon" href="imagenes/gimec.png">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Rubik:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/308f77748e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2a49a4fab6.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +30,7 @@
           <ul class="menuLista">
                
               </li>
-              <li class="active">
+              <li class="enlaces">
                   <a href="../pages/productos.html">
                   Productos
                   </a>
@@ -46,57 +51,63 @@
                   </a>
               </li>
           </ul>
+          <div class="carrito">
+            <input type="checkbox" id="checked">
+            <label for="checked" class="checkbtn">
+            
+              <i class="fa-solid fa-cart-shopping fa-2x"></i>
+            
+          </label>
+            <div class="submenu">
+              <table class="table">
+                <thead>
+                  <tr class="tabla">
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acción</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="items"></tbody>
+                <tfoot>
+                  <tr id="footer">
+                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                  </tr>
+                </tfoot>
+              </table>
+            <template id="template-footer">
+                <th scope="row" colspan="2">Total productos</th>
+                <td>10</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                        vaciar todo
+                    </button>
+                </td>
+                <td class="font-weight-bold">$ <span>5000</span></td>
+            </template>
+            <template id="template-carrito">
+              <tr>
+                <th scope="row">id</th>
+                <td>Café</td>
+                <td>1</td>
+                <td>
+                    <button class="btn btn-info btn-sm">
+                        +
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        -
+                    </button>
+                </td>
+                <td>$ <span>500</span></td>
+              </tr>
+            </template>
+          </div>
+          </div>
+            
       </nav>
   </header>
     
-
-
-
-    
-      <table class="table">
-        <thead>
-          <tr class="tabla">
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Acción</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody id="items"></tbody>
-        <tfoot>
-          <tr id="footer">
-            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-          </tr>
-        </tfoot>
-      </table>
-    <template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
-        <td>10</td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                vaciar todo
-            </button>
-        </td>
-        <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
-
-    <template id="template-carrito">
-      <tr>
-        <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
-        <td>
-            <button class="btn btn-info btn-sm">
-                +
-            </button>
-            <button class="btn btn-danger btn-sm">
-                -
-            </button>
-        </td>
-        <td>$ <span>500</span></td>
-      </tr>
-    </template>
 
       <div class="row" id="cards"></div>
 
@@ -105,9 +116,9 @@
     <div class="card" style="width: 18rem;">
         <img src= id="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title"></h5>
+          <h2 class="card-title"></h2>
           <p id="card-text"></p>
-          <h5 class="simbolo">$<span id="price"></span></h5>
+          <h3 class="simbolo">$<span id="price"></span></h3>
           <button type="button" id="add" class="btn btn-outline-secondary">Comprar</button>
         </div>
       </div>

@@ -40,7 +40,7 @@ const fetchData = async () => {
 
 const pintarCard = data => {
     data.forEach(producto => {
-         templateCards.querySelector('h5').textContent = producto.nombre
+         templateCards.querySelector('h2').textContent = producto.nombre
          templateCards.querySelector('#card-text').textContent = producto.descripcion
          templateCards.querySelector('#price').textContent = producto.precio
          templateCards.querySelector('img').setAttribute("src",producto.url)
@@ -79,7 +79,7 @@ const addcarrito = e => {
 const setCarrito = objeto => {
   const produ = {
        id : objeto.querySelector('button').dataset.id,
-       title : objeto.querySelector('h5').textContent,
+       title : objeto.querySelector('h2').textContent,
        precio : objeto.querySelector('#price').textContent,
        cantidad : 1
   }

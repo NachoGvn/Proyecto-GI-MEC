@@ -70,6 +70,15 @@
     "cantidad" : 0,
     "url": "imagenes/pieza 2.jpg"
 
+},
+{
+    "id": 9,
+    "nombre": "Pieza torneada n9",
+    "descripcion": "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    "precio": 3000,
+    "cantidad" : 0,
+    "url": "imagenes/pieza 1.jpg"
+
 }
     
     ]

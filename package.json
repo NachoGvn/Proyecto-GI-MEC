@@ -1,0 +1,23 @@
+{
+  "name": "gi-mec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch utilities -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NachoGvn/Proyecto-GI-MEC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NachoGvn/Proyecto-GI-MEC/issues"
+  },
+  "homepage": "https://github.com/NachoGvn/Proyecto-GI-MEC#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

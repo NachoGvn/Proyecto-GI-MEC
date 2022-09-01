@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+.general {
+    overflow-x: hidden;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+  }
 a:link {
     text-decoration: none;
     color: black;
@@ -9,7 +18,7 @@ a:visited {
 
 .menu {
     display: grid;
-    grid-template-areas: "logo menuLista";
+    grid-template-areas: "logo menuLista carrito";
     border-bottom: 3px solid black;
     height: 70px;
     padding-right: 20px;
@@ -30,18 +39,61 @@ a:visited {
     .logo {
         display:flex;
         justify-content: flex-start;
+        height: 20px;
+        width: 20px;
     }
     .menuLista {
         display: flex;
         list-style-type: none;
         z-index: 2;
-        justify-content: flex-end;
+        justify-content: center;
         gap: 70px;
-        padding-top: 20px;
+        padding-top: 5px;
         .enlaces {
+            cursor:pointer;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 15px;
+            letter-spacing: 0.1rem;
+            font-size: 0.73rem;
+            position:relative;
+            padding:0.7rem 1.2rem;
+            background:white;
+            border-top-right-radius:0.7rem;
+            border-bottom-left-radius:0.7rem;
+            transition:all 1s;
+                    &:after,&:before{
+                        content:" ";
+                        width:0.7rem;
+                        height:0.7rem;
+                        position:absolute;
+                        border :0px solid #fff;
+                        transition:all 1s;
+                        }
+                    &:after{
+                        top:-1px;
+                        left:-1px;
+                        border-top:3px solid black;
+                        border-left:3px solid black;
+                    }
+                    &:before{
+                        bottom:-1px;
+                        right:-1px;
+                        border-bottom:3px solid black;
+                        border-right:3px solid black;
+                    }
+                    &:hover{
+                        border-top-right-radius:0px;
+                    border-bottom-left-radius:0px;
+                        // background:rgba(0,0,0,.5);
+                        // color:white;
+                        &:before,&:after{
+                            
+                            width:100%;
+                            height:100%;
+                            // border-color:white;
+                        }
+                    }
+                
+                
         }
         .enlaces:hover {
             transform: scale(1.2);
@@ -49,13 +101,101 @@ a:visited {
             
         }
         .active {
+            cursor:pointer;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 15px;
-            text-decoration:underline
+            font-size: 10px;
+            position:relative;
+            padding:10px 20px;
+            background:white;
+            border-top-right-radius:10px;
+            border-bottom-left-radius:10px;
+            transition:all 1s;
+                        &:after,&:before{
+                            content:" ";
+                            width:10px;
+                            height:10px;
+                            position:absolute;
+                            border :0px solid #fff;
+                            transition:all 1s;
+                            }
+                        &:after{
+                            top:-1px;
+                            left:-1px;
+                            border-top:5px solid black;
+                            border-left:5px solid black;
+                        }
+                        &:before{
+                            bottom:-1px;
+                            right:-1px;
+                            border-bottom:5px solid black;
+                            border-right:5px solid black;
+                        }
+                        &:hover{
+                            border-top-right-radius:0px;
+                        border-bottom-left-radius:0px;
+                            // background:rgba(0,0,0,.5);
+                            // color:white;
+                            &:before,&:after{
+                                
+                                width:100%;
+                                height:100%;
+                                // border-color:white;
+                            }
+                        }    
         }
 
         }
+    .carrito {
+        padding-top: 0.7rem;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        .checkbtn {
+            color: black;
+            line-height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            
+        }
+        #checked {
+            display: none;
+        }
+        .submenu {
+            position: fixed;
+            margin-top: 50px;
+            background-color: white;
+            transition: all .5s;
+            right: -110%;
+            z-index: 2;
+            border-top-right-radius:10px;
+            border-bottom-left-radius:10px;
+            border-top:5px solid black;
+            border-bottom:5px solid black;
+            border-right:5px solid black;
+            border-left: 5px solid black;
+            transition:all 0.3s;
+
+            
+            
+            
+
+        }
+        #checked:checked ~ .submenu {
+            display: block;
+            position:fixed;
+            right: 0;
+            z-index: 2;
+            max-height: 310px;
+            overflow-y: scroll auto;
+            overflow-x: hidden;
+            padding-right: 40px;
+            text-align: center;
+            transition:all 1s;
+            margin-right: 0.2rem;
+        }
+    }
+   
     }
 
 
@@ -65,116 +205,63 @@ a:visited {
     margin-top: 1rem;
 }
 
+#cards {
+    margin-top: 5rem;
+}
+
 .card {
     margin-left: 8rem;
     margin-bottom: 3rem;
     padding-bottom: 1rem;
-    #add {
-        margin-left: 3rem;
-        margin-top: 3rem;
-        margin-bottom: 0;
+    margin-top: 10rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0,0, 0.2);
+
+    .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0);
     }
+    #add {
+        margin-left: 4.3rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+
+    }
+    #price {
+    text-align: center;
+        
+      }
+    h2 {
+        font-size: 2.2rem;
+        padding-top: 3rem;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    #card-text {
+        text-align: justify;
+      }
     
 }
+.simbolo {
+    text-align: center;
+    padding-top: 0.5rem;
+    }
 .table {
     margin-left: 1rem;
 }
 
-footer {
-    color: white;
-    overflow: hidden;
-    background-color: black;
-    list-style: none;
-    text-align: justify;
 
-}
-
-.footer0 {
-    color: white;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    background-color: black;
-    list-style: none;
-    text-align: justify;
-    grid-area: footer;
-    
-    
-
-}
-footer {
-    nav {
-        ul {
-        list-style: none;
-}
-}
-}
-
-.footerGrid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 32rem 5rem 32rem;
-    grid-template-areas: "footerTitulo footerTitulo1 footerTitulo2";
-    gap: 5rem;
-    .footerTitulo {
-        padding: 1rem;
-        padding-right: 10rem;
-        grid-area: footerTitulo;
-        text-align: center;
-        font-size: 1rem;
-        text-transform: uppercase;
-        .footerSub {
-            padding-top: 1rem;
-        }
-        nav {
-            ul {
-                list-style: none;
-            }
-        }
-    }
-    .footerTitulo1 {
-        padding: 1rem;
-        grid-area: footerTitulo1;
-        text-align: center;
-        font-size: 1rem;
-        text-transform: uppercase;
-        .footerSub1 {
-            padding-top: 1rem;
-            ul {
-                li {
-                    padding: .1rem;
-                }
-            }
-        }
-    }
-
-    .footerTitulo2 {
-    padding: 1rem;
-    padding-left: 22rem;
-    grid-area: footerTitulo2;
-    text-align: center;
-    font-size: 1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    .footerSub2 {
-        padding-top: 1rem;
-        ul {
-            li {
-                padding: .3rem;
-            }
-        }
-    }
-    }
-
-}
 
 @media screen and (min-width: 480px) and (max-width: 780px){
     /*inicio de scss de menu */
     .menu {
         display: grid;
-        grid-template-areas: "logo ckeckboton";
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 0.5fr 0.1fr;
+        grid-template-areas: "logo ckeckboton carrito";
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 0.5fr 0.1fr 0.5fr;
         grid-column-gap: 1rem;
         height: 70px;
         padding-right: 20px;
@@ -183,7 +270,7 @@ footer {
         .checkboton {
             grid-area: ckeckboton;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             padding-top: 20px;
            
         }
@@ -194,6 +281,8 @@ footer {
             grid-area: logo;
             display: flex;
             justify-content: flex-start;
+            height: 10px;
+            width: 10px;
             
             
         }
@@ -216,82 +305,69 @@ footer {
                     font-size: 30px
                 }
             }
-        
+            .enlaces {
+                cursor:pointer;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 0.8rem;
+                position:relative;
+                padding:0.7rem 1.2rem;
+                background:white;
+                border-top-right-radius:0.7rem;
+                border-bottom-left-radius:0.7rem;
+                transition:all 1s;
+                        &:after,&:before{
+                            content:" ";
+                            width:0.7rem;
+                            height:0.7rem;
+                            position:absolute;
+                            border :0px solid #fff;
+                            transition:all 1s;
+                            }
+                        &:after{
+                            top:-1px;
+                            left:-1px;
+                            border-top:3px solid black;
+                            border-left:3px solid black;
+                        }
+                        &:before{
+                            bottom:-1px;
+                            right:-1px;
+                            border-bottom:3px solid black;
+                            border-right:3px solid black;
+                        }
+                        &:hover{
+                            border-top-right-radius:0px;
+                        border-bottom-left-radius:0px;
+                            // background:rgba(0,0,0,.5);
+                            // color:white;
+                            &:before,&:after{
+                                
+                                width:100%;
+                                height:100%;
+                                // border-color:white;
+                            }
+                        }
+                    
+                    
+            }
+        }
 
-        }
-        }
-        footer {
-            color: white;
-            overflow: hidden;
-            background-color: black;
-            list-style: none;
-            text-align: justify;
-        
-        }
-        
-        .footer0 {
-            color: white;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-            background-color: black;
-            text-align: justify;
-            grid-area: footer;
-        
-        }
-        
-        .footerGrid {
-            display: grid;
-            grid-gap: 1rem;
-            grid-template-columns: 5rem 5rem 5rem;
-            grid-template-areas: "footerTitulo footerTitulo1 footerTitulo2";
-            gap: 5rem;
-            .footerTitulo {
-                padding: 1rem;
-                grid-area: footerTitulo;
-                text-align: start;
-                font-size: 1rem;
-                text-transform: uppercase;
-                .footerSub {
-                    padding-top: 1rem;
-                }
-                nav {
-                    ul {
-                        list-style: none;
-                    }
-                }
+        .carrito{
+            .checkbtn{
+                display: flex;
+                justify-content: center;
             }
-            .footerTitulo1 {
-                padding: 1rem;
-                grid-area: footerTitulo1;
-                text-align: center;
-                font-size: 1rem;
-                text-transform: uppercase;
-                .footerSub1 {
-                    padding-top: 1rem;
-                }
-            }
-        
-            .footerTitulo2 {
-            padding: 1rem;
-            grid-area: footerTitulo2;
-            text-align: end;
-            font-size: 1rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            .footerSub2 {
-                padding-top: 2rem;
-            }
-            }
-        
         }
+        }
+        
         }
         @media screen and (max-width: 480px) {
         .menu {
             display: grid;
-            grid-template-areas: "logo ckeckboton";
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: 0.5fr 0.1fr;
+            grid-template-areas: "logo ckeckboton carrito";
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 0.5fr 0.1fr 0.5fr;
             grid-column-gap: 1rem;
             height: 70px;
             padding-right: 20px;
@@ -300,7 +376,7 @@ footer {
             .checkboton {
                 grid-area: ckeckboton;
                 display: flex;
-                justify-content: flex-end;
+                justify-content: center;
                 padding-top: 20px;
                
             }
@@ -333,7 +409,13 @@ footer {
                         font-size: 30px
                     }
                 }
-            
+                .carrito{
+                    .checkbtn{
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+                    
     
             }
             }
